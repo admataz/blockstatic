@@ -1,0 +1,27 @@
+{
+  "name": "blockstatic",
+  "version": "1.0.0",
+  "description": "generate static HTML pages from structured configs markdown and json  ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Davis <adam@admataz.com>",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "jsonfile": "^2.2.3",
+    "lodash": "^3.10.1",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true
+    }
+  }
+}
