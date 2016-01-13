@@ -1,0 +1,25 @@
+<div class="cf" id="client-list">
+{{#each clients }}
+<div class="item">
+  <a href="#{{ id }}" class="client-logo"><img src="/assets/images{{ global.images_path }}/client_avatars/{{ logo }}" /></a>
+  
+  <div class="project-info cf">
+  <h3>{{ title }}</h3>
+    <blockquote>
+      {{{ descr }}}
+    </blockquote>
+  
+    {{#if links }}
+      <ul class="links">
+      {{#each links}}
+        <li><a href="{{ linkUrl }}" target="_blank">{{{ linkTitle }}}</a></li>
+      {{/each}}
+      </ul>
+    {{/if}}
+
+  </div>
+
+
+</div>
+{{/each}}
+</div>

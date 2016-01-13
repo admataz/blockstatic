@@ -1,0 +1,84 @@
+{
+  "clients": [{
+    "title": "The Elders",
+    "descr": "The Elders is an independent group of global leaders who work together for peace and human rights. admataz built, and continues to develop, support and maintain their Drupal website.",
+    "links": [{"linkUrl": "http://theelders.org", "linkTitle": "theelders.org"}],
+    "logo": "theelders.jpg",
+    "id": "the-elders"
+  },{
+    "title": "Girls Not Brides 'Theory of Change'",
+    "descr": "Girls Not Brides is a global partnership of more than 400 civil society organisations from over 60 countries working to address child marriage. admataz helped develop the online interactive version of their 'Theory of Change' - a document detailing a range of strategies needed to end child marriage.",
+    "links": [{"linkUrl": "http://www.girlsnotbrides.org/child-marriage-theory-of-change/", "linkTitle": "girlsnotbrides.org/child-marriage-theory-of-change/"}],
+    "logo": "girls-not-brides.png",
+    "id": "girls-not-brides"
+  }, {
+    "title": "Africa Check",
+    "descr": "Africa Check is a non-profit organisation which promotes accuracy in public debate. admataz helped digital agency, Long White Digital, build the WordPress site, and I have continued to provide support as the site has grown and changed.",
+    "logo": "africa-check.png",
+    "links": [{"linkUrl": "http://africacheck.org", "linkTitle": "africacheck.org"}],
+    "id": "africa-check"
+  }, {
+    "title": "Kofi Annan Foundation",
+    "descr": "The Kofi Annan Foundation aims to promote better global governance and strengthen the capacities of people and countries to achieve a fairer, more secure world. admataz developed the Kofi Annan Foundation website using Drupal.",
+    "logo": "kofiannan.jpg",
+    "links": [{"linkUrl": "http://www.kofiannanfoundation.org", "linkTitle": "kofiannanfoundation.org"}],
+    "id": "kofi-annan-foundation"
+  }, {
+    "title": "Bookswarm",
+    "descr": "Bookswarm is a small, agile digital agency dedicated to delivering projects to the book publishing trade. admataz developed a series of bespoke tools for importing and publishing book titles from supplied feeds for their clients.",
+    "logo": "bookswarm.png",
+    "links": [{"linkUrl": "http://www.bookswarm.co.uk", "linkTitle": "www.bookswarm.co.uk"}],
+    "id": "bookswarm"
+  }, {
+    "title": "Topshop's Kate Moss range 2014",
+    "descr": "admataz developed the functionality for the 'Which Kate are you?' quiz as part of the launch of Topshop's 2014 Kate Moss range.",
+    "links": [{"linkUrl": "http://topshop.com/katemoss", "linkTitle": "topshop.com/katemoss"}],
+    "logo": "topshop.jpg",
+    "id": "topshop"
+  }, {
+    "title": "NOW: Pensions",
+    "descr": "NOW: Pensions has set out to bring cost-efficiency, performance and simplicity to the UK pensions industry. admataz continues to  develop enhancments and custom features for this WordPress based site.",
+    "logo": "nowpensions.jpg",
+    "links": [{"linkUrl": "http://nowpensions.com", "linkTitle": "nowpensions.com"}],
+    "id": "now-pensions"
+  }, {
+    "title": "Marie Stopes International data visualisations",
+    "descr": "Marie Stopes place great emphasis on using evidence to continually monitor and evaluate the effectiveness of their health programmes. admataz developed a series of information visualisations for the launch of the data section to the global site. ",
+    "logo": "mariesstopes.png",
+    "links": [{"linkUrl": "http://mariestopes.org", "linkTitle": "mariestopes.org"}],
+    "id": "marie-stopes-international"
+  }, {
+    "title": "National Housing Federation interactive data map",
+    "descr": "The National Housing Federation is the voice of affordable housing in England. admataz developed a data mapping application for the NHF to layer data on a regional map of the UK.",
+    "logo": "nhf.jpg",
+    "links": [{"linkUrl": "http://www.housing.org.uk/", "linkTitle": "housing.org.uk"}],
+    "id": "national-housing-federation"
+    }, 
+    {
+    "title": "Homeless Veterans Christmas Appeal 2014",
+    "descr": "The Independent and Evening Standard came together in partnership with ABF The Soldiers’ Charity and Veterans Aid to support veterans and their families struggling with housing issues. admataz helped digital agency Long White Digital with the build of the donations page and integration with Stripe online payment system.",
+    "logo": "homeless-veterans.png",
+    "links": [{"linkUrl": "http://donate.homelessveterans.co.uk", "linkTitle": "donate.homelessveterans.co.uk"}],
+    "id": "homeless-veterans"
+  }, 
+  {
+    "title": "Tag Worldwide",
+    "descr": "Tag is a global brand services company. admataz worked on a contract to develop a series of Drupal sites for The AA, Landrover and Avios.",
+    "logo": "tag-worldwide.png",
+    "links": [{"linkUrl": "http://tagworldwide.com", "linkTitle": "tagworldwide.com"}],
+    "id": "tag-worldwide"
+  },
+  {
+    "title": "Nimbletank",
+    "descr": "An award winning strategic thinking cross platform, mobile application and mobile website agency. admataz worked on a contract to develop a Drupal based admin system and web service to an iPhone app for Bobbi Brown.",
+    "logo": "nimbletank.png",
+    "links": [{"linkUrl": "http://nimbletank.com", "linkTitle": "nimbletank.com"}],
+    "id": "nimbletank"
+  }, {
+    "title": "The App Business",
+    "descr": "Business-transforming mobile software for the world’s biggest brands. admataz worked on a contract to develop a web service for a pilot iPad application for Unilever.",
+    "logo": "theappbusiness.png",
+    "links": [{"linkUrl": "http://www.theappbusiness.com", "linkTitle": "theappbusiness.com"}],
+    "id": "the-app-business"
+  }]
+}
