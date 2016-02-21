@@ -1,5 +1,5 @@
 {
-    "route": "",
+    "routePath": "",
     "docs": {
         "page": "./src/content/pages/home.md"
     },
@@ -12,9 +12,5 @@
             "data": "./src/content/data/client-list.json"
         }
 
-    },
-    "templates": {
-        "page": "./src/templates/page.handlebars",
-        "html": "./src/templates/html.handlebars"
     }
 }
