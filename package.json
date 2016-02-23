@@ -13,18 +13,12 @@
   "license": "MIT",
   "dependencies": {
     "handlebars": "^4.0.5",
-    "jsdom": "^7.2.2",
+    "jsdom": "^8.0.4",
     "jsonfile": "^2.2.3",
-    "lodash": "^3.10.1",
+    "lodash": "^4.5.1",
     "meta-marked": "^0.4.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.0"
-  },
-  "eslintConfig": {
-    "env": {
-      "node": true,
-      "es6": true
-    }
   },
   "devDependencies": {
     "chai": "^3.4.1",
