@@ -12,6 +12,9 @@
             "template": "./sample_content/templates/elements/client_list.handlebars",
             "data": "./sample_content/data/client-list.json"
         }
+    },
+    "indexPages": {
+         "articlesIndex": {"inputPath": "./sample_content/articles", "template": "./sample_content/templates/pageindexes/pageIndexList.handlebars", "outputPath": "articles"}
+     }
 
-    }
 }
