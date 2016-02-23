@@ -1,5 +1,0 @@
-- a pure JS implementation of page generation __TODOs__ [lib/buildList.js](lib/buildList.js)
-- allow custom options to merge with default __TODOs__ [lib/buildList.js](lib/buildList.js)
-- decouple the global object functionality - make it an option set outside of this function __TODOs__ [lib/loadJsonVars.js](lib/loadJsonVars.js)
-- make the required elements their own parameters __TODOs__ [lib/indexPages.js](lib/indexPages.js)
-- No details __TODOs__ [lib/compilePage.js](lib/compilePage.js)
