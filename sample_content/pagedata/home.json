@@ -1,15 +1,16 @@
 {
     "routePath": "",
     "docs": {
-        "page": "./src/content/pages/home.md"
+        "page": "./sample_content/pages/home.md",
+        "about": "./sample_content/pages/about.md"
     },
     "data": {
-        "common": "./src/content/data/global-content.json"
+        "common": "./sample_content/data/global-content.json"
     },
     "elements": {
         "clientList": {
-            "template": "./src/templates/elements/client_list.handlebars",
-            "data": "./src/content/data/client-list.json"
+            "template": "./sample_content/templates/elements/client_list.handlebars",
+            "data": "./sample_content/data/client-list.json"
         }
 
     }

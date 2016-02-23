@@ -1,6 +1,6 @@
 {
     "routePath": "about",
     "docs": {
-        "page": "./sample-content/pages/about-short.md"
+        "page": "./sample_content/pages/about.md"
     }
 }

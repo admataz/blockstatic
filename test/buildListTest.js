@@ -10,6 +10,7 @@ test('valid list compiled from file dir containing .md files', (t) => {
     if(err){
       return console.log(err);
     }
+    console.log(files);
     t.ok(typeof files,  'array');
     t.end();
 
