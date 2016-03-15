@@ -24,5 +24,20 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "tape": "^4.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admataz/blockstatic.git"
+  },
+  "keywords": [
+    "static",
+    "builder",
+    "html",
+    "handlebars",
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/admataz/blockstatic/issues"
+  },
+  "homepage": "https://github.com/admataz/blockstatic#readme"
 }
