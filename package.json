@@ -12,9 +12,9 @@
   "author": "Adam Davis <adam@admataz.com>",
   "license": "MIT",
   "dependencies": {
-    "async": "^1.5.2",
+    "async": "^2.1.4",
     "handlebars": "^4.0.5",
-    "jsdom": "^8.0.4",
+    "jsdom": "^9.9.1",
     "jsonfile": "^2.2.3",
     "lodash": "^4.5.1",
     "meta-marked": "^0.4.0",
