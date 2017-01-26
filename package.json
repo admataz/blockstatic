@@ -1,43 +1,43 @@
 {
-  "name": "blockstatic",
-  "version": "1.1.2",
-  "description": "generate static HTML pages from structured configs markdown and json  ",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "node ./test/compilePageTest.js"
-  },
-  "author": "Adam Davis <adam@admataz.com>",
-  "license": "MIT",
-  "dependencies": {
-    "async": "^2.1.4",
-    "handlebars": "^4.0.5",
-    "jsdom": "^9.9.1",
-    "jsonfile": "^2.2.3",
-    "lodash": "^4.5.1",
-    "meta-marked": "^0.4.0",
-    "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.0"
-  },
-  "devDependencies": {
-    "chai": "^3.4.1",
-    "tape": "^4.4.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/admataz/blockstatic.git"
-  },
-  "keywords": [
-    "static",
-    "builder",
-    "html",
-    "handlebars",
-    "json"
-  ],
-  "bugs": {
-    "url": "https://github.com/admataz/blockstatic/issues"
-  },
-  "homepage": "https://github.com/admataz/blockstatic#readme"
+    "name": "blockstatic",
+    "version": "1.1.2",
+    "description": "generate static HTML pages from structured configs markdown and json  ",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "node ./test/buildPagesTest.js"
+    },
+    "author": "Adam Davis <adam@admataz.com>",
+    "license": "MIT",
+    "dependencies": {
+        "async": "^2.1.4",
+        "handlebars": "^4.0.5",
+        "jsdom": "^9.9.1",
+        "jsonfile": "^2.2.3",
+        "lodash": "^4.5.1",
+        "meta-marked": "^0.4.0",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.0"
+    },
+    "devDependencies": {
+        "chai": "^3.4.1",
+        "tape": "^4.4.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/admataz/blockstatic.git"
+    },
+    "keywords": [
+        "static",
+        "builder",
+        "html",
+        "handlebars",
+        "json"
+    ],
+    "bugs": {
+        "url": "https://github.com/admataz/blockstatic/issues"
+    },
+    "homepage": "https://github.com/admataz/blockstatic#readme"
 }
