@@ -9,10 +9,12 @@
   "scripts": {
     "test": "node ./test/buildPagesTest.js"
   },
+  "bin": "./bin/index.js",
   "author": "Adam Davis <adam@admataz.com>",
   "license": "MIT",
   "dependencies": {
     "async": "^2.1.4",
+    "commander": "^2.9.0",
     "handlebars": "^4.0.5",
     "jsdom": "^9.9.1",
     "jsonfile": "^2.2.3",
@@ -23,6 +25,8 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "eslint": "^3.15.0",
+    "eslint-plugin-promise": "^3.4.0",
     "tape": "^4.4.0"
   },
   "repository": {
