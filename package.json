@@ -21,7 +21,8 @@
     "lodash": "^4.5.1",
     "meta-marked": "^0.4.0",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.0"
+    "rimraf": "^2.5.0",
+    "rss": "^1.2.2"
   },
   "devDependencies": {
     "chai": "^3.4.1",

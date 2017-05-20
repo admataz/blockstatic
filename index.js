@@ -11,6 +11,7 @@ var loadPageIndexList = require('./lib/loadPageIndexList');
 var loadTemplate = require('./lib/loadTemplate');
 var writeHtmlPage = require('./lib/writeHtmlPage');
 var jsonFeedPages = require('./lib/jsonFeedPages');
+var rssFeedPages = require('./lib/rssFeedPages');
 
 
 module.exports = {
@@ -26,5 +27,6 @@ module.exports = {
   loadPageIndexList,
   loadTemplate,
   writeHtmlPage,
-  jsonFeedPages
+  jsonFeedPages,
+  rssFeedPages
 };
