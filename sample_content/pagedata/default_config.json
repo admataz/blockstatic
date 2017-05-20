@@ -1,0 +1,14 @@
+{
+  "templates": {
+    "html": "./sample_content/templates/html.handlebars",
+    "page": "./sample_content/templates/page.handlebars"
+  },
+  "site": {
+    "title": "admataz - code and javascript",
+    "home_page_url": "http://admataz.com",
+    "feed_url": "http://admataz.com/feed.json",
+    "description": "Site for admataz",
+    "item_root": "http://admataz.com/articles/"
+  }
+  
+}
