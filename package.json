@@ -13,21 +13,21 @@
   "author": "Adam Davis <adam@admataz.com>",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.1.4",
-    "commander": "^2.9.0",
+    "async": "^3.1.0",
+    "commander": "^3.0.2",
     "handlebars": "^4.0.5",
-    "jsdom": "^9.9.1",
-    "jsonfile": "^2.2.3",
+    "jsdom": "^15.1.1",
+    "jsonfile": "^5.0.0",
     "lodash": "^4.5.1",
     "meta-marked": "^0.4.0",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.0",
+    "rimraf": "^3.0.0",
     "rss": "^1.2.2"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "eslint": "^3.15.0",
-    "eslint-plugin-promise": "^3.4.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.5.1",
+    "eslint-plugin-promise": "^4.2.1",
     "tape": "^4.4.0"
   },
   "repository": {
