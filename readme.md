@@ -93,7 +93,7 @@ That should get you started.
 `blockstatic.compilePage( options, cb )` - Compile a specific json object structure that contains all the page information into a static html page
 
 
-`blockstatic.indexPages(inputPath, outputPath, cb)` - generates an index for a directory containing content
+`blockstatic.indexPages(inputPath, outputPath, limit, cb)` - generates an index for a directory containing content
 
 
 `blockstatic.loadDataObjectList(docs, cb)` - get a list/object of json document paths and turn them into a compiled objects
