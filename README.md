@@ -7,12 +7,15 @@
 
 ## Usage
 
-The main interface is the `buildPages()` function - which accepts a source path, a destination path, a defaults object, and a callback.
+Blockstatic can be used as with a simple command line interface - or as a library in your custom build scripts. 
+
+The most important interfaces are the `buildContentList()` and `buildPages()` which between them allow you to define a directory containing content pages, and with some config options to build HTML output. 
 
 e.g.
 
 ``` javascript
-blockstatic.buildPages('./src/content/pagedata', './dist', {}, cb);
+blockstatic.buildContentList('./src/content/pagedata', 'https://admataz.com/')
+.then(contentPages => blockstatic.buildPages(contentPages, './dist', options));
 ```
 
 This will scan the contents of the source path for Markdown and JSON files, and convert each into an HTML page, according to the options passed to it, or defined in the loaded JSON.
@@ -20,21 +23,29 @@ This will scan the contents of the source path for Markdown and JSON files, and 
 
 ### 1. Preparing content
 
-#### Individual pages can be defined with JSON or as Markdown
+Individual pages can be defined with JSON or as Markdown with YAML front-matter variables
+
+
+- assets:  object with arrays containing assetts for this page.
+- indexPages:  object with list source and ouput options 
+- data: object with  each property a path to a json file containing data for the page
+- docs: object with each property a path to a markdown file for rendering in the page
+- routePath: the path to this page
+- meta: key/value pairs for title, author, date, published, and any others like keywords, description etc
+
 
 
 #### JSON
 - `routePath` - the file location (folder) where the output HTML will be written
 - `docs` - a hash of ids and markdown files, which are pulled into the template by key
 - `data` - a hash of ids and JSON files to be used in the handlebars templates, identified in the template by the key
-- `elements` - a partial, with a data source, to be embedded in the main html template, identified by the key
 - `indexPages` - generates a block containing a list of links or pages, as defined by the object
-- `templates` - define a `page` (inner) and `html` (outer) template for each page
+- `templates` - define a `page` (inner) and `html` (outer) template for each page - paths to `.handlebars` files
 
 e.g. a page definition
 ```json
 {
-    "routePath": "",
+    "routePath": "about",
     "docs": {
         "page": "./sample_content/pages/home.md",
         "about": "./sample_content/pages/about.md"
@@ -42,27 +53,36 @@ e.g. a page definition
     "data": {
         "common": "./sample_content/data/global-content.json"
     },
-    "elements": {
-        "clientList": {
-            "template": "./sample_content/templates/elements/client_list.handlebars",
-            "data": "./sample_content/data/client-list.json"
-        }
-    },
     "indexPages": {
-         "articlesIndex": {"inputPath": "./sample_content/articles", "template": "./sample_content/templates/pageindexes/pageIndexList.handlebars", "outputPath": "articles"}
+         "articlesIndex": {
+           "inputPath": "./sample_content/articles",
+            "outputPath": "articles", 
+            "limit": 10
+          }
      },  
     "templates": {
         "page": "./sample_content/templates/page_home.handlebars",
         "html": "./sample_content/templates/html.handlebars"
+    },
+    "meta": {
+      "title": "admataz. ideas + code",
+      "author": "Adam Davis",
+      "date": "2019-10-07",
+      "description": "admataz",
+      "keywords": "code, adam davis, web",
+      "published": true
     }
 
 }
 ```
 
-#### Markdown
-The markdown parser supports standard Markdown with a Metadata preamble:
+#### Markdown with front-matter
+The markdown parser supports standard Markdown with a YAML front-matter:
 
-```markdown
+Note for markdown the `routePath` `docs` `data` `indexPages` `templates` `assets` are extracted, and what remains is `meta`
+
+
+```yaml
 ---
 author: Adam Davis  
 date: 2012-01-16  
@@ -70,131 +90,91 @@ description: "Some thoughts on code, beauty and art: my response to a request fr
 keywords: code, beauty, art, opinion,  
 title: code, beauty and art.
 published: true
+indexPages: 
+    listIndex:
+        inputPath: "./src/content/code-ideas"
+        outputPath: "/code-ideas"
+        limit: 10
+assets: 
+  js: 
+    - ./src/scripts/funky.js
 ---
-
-# Code, beauty and art
-
-Like all forms of human communication, code for computer programs can contain expressiveness, humour, beauty, ugliness…
-
-etc.
-
 ```
 
-Below there is a more full example of how I generate content pages for my website.
 
 
 That should get you started.
-
-### Available methods
-`blockstatic.buildPages(inputDir, outputDir, [options,] cb)` - generate static html for all pages in a source directory
-
-`blockstatic.buildList(inputDir, cb)` - compile list of html from specific directory of markdown or JSON files
-
-`blockstatic.compilePage( options, cb )` - Compile a specific json object structure that contains all the page information into a static html page
-
-
-`blockstatic.indexPages(inputPath, outputPath, cb)` - generates an index for a directory containing content
-
-
-`blockstatic.loadDataObjectList(docs, cb)` - get a list/object of json document paths and turn them into a compiled objects
-
-
-`blockstatic.loadDocument(contentPath, cb)` - Load a markdown file, and turn it into html+metadata
-
-
-`blockstatic.loadDocumentList(docs, cb)` - Load a supplied list of documents into a results object with html for each keyed value
-
-`blockstatic.loadJsonElements(els, cb)`- convert supplied list of json data items into an object containing compiled html for each keyed value
-
-
-`blockstatic.loadJsonVars(path, cb)` - load a json file and turn it into a javascript object
-
-
-`blockstatic.loadPageIndexList(els, cb)` - convert supplied list of json data items into an object containing compiled html for each keyed value
-
-
-`blockstatic.loadTemplate(dataIn, templateIn, cb)` - loads and compiles a handlebars template with supplied data
-
-
-`blockstatic.writeHtmlPage(dest, filecontents, cb)` - creates an index.html file within a specified path containing the supplied contents
-
-
 
 
 ### Example
 
 In the example below I am generating pages for my website.
 
-```
-var blockstatic = require('blockstatic');
-var async = require('async');
+```js
 
-
-var defaultOptions = {
-  "docs": {
-    "contact": "./src/content/pages/contact-short.md",
-    "about": "./src/content/pages/about-short.md",
-    "site-links": "./src/content/pages/site-links.md"
+const config = {
+   templates: {
+    html: "./src/templates/html.handlebars",
+    page: "./src/templates/page.handlebars"
   },
-  "data": {
-    "common": "./src/content/data/global-content.json"
-  },
-  "templates": {
-    "html": "./src/templates/html.handlebars",
-    "page": "./src/templates/page.handlebars"
+  site: {
+    title: "admataz - code and javascript",
+    homePageUrl: "http://admataz.com",
+    feedUrl: "http://admataz.com/feed.json",
+    description: "Site for admataz",
+    itemRoot: "http://admataz.com/"
   }
-};
+    baseUrl: 'https://admataz.com'
+  }
 
+let compiledContent
+blockstatic.buildContentList('./src/pages', 'https://admataz.com', 0)
+.then(contentList => blockstatic.buildPages(contentList, './dist', config ))
+.then(contentPages => await Promise.all(contentPages))
+.then(compcontent => {
+  compiledContent = compcontent
+  return blockstatic.jsonFeedTemplate(
+    compiledContent,
+    options.site
+  )
+  }
+  )
+.then(jsonFeed => jf.writeFile(`${dest}/index.json`, jsonFeed))
+.then(() => {
+  return blockstatic.rssFeedTemplate(
+    compiledContent,
+    options.site
+  )
+  }
+  )
+  .then(rssFeed => fs.writeFile(`${dest}/index.xml`, rssFeed, 'utf8'))
+  .catch(err => console.log(err))
 
-function init(callback){
-    async.series([
-      (cb) => {
-        blockstatic.buildPages('./src/content/articles', './dist/articles', defaultOptions, cb);
-      },
-      (cb) => {
-        blockstatic.buildPages('./src/content/pagedata', './dist', defaultOptions, cb);
-      },
-      (cb) => {
-        blockstatic.buildPages('./src/content/case_studies', './dist/case-studies', defaultOptions, cb);
-      }
-    ],
-      (err) => {
-        if (err) {
-              return callback(err)
-            }
-            console.log('Compiled Content!');
-            return callback(null);
-      }
-    );
-}
+```
 
+### Command-line
 
-module.exports = init;
-if (!module.parent) {
-    init(function(err){
-        if(err){
-            return console.log(err);
-        }
+You can integrate this basic interface into your npm scripts or other build tools: 
 
-        console.log('Compiled Content!');
-
-    })
-}
+```
+Options:
+  -V, --version        output the version number
+  -c, --config <path>  JSON input for default values (site details, templates for html and page required)
+  -s, --src <path>     Source content folder (.md and .json)
+  -u, --baseurl <url>  Base url for the generated html
+  -o, --output <path>  Output dir path
+  -h, --help           output usage information
 ```
 
 
 ### Tests
-I started writing some - but these need completing.
+I started writing some - these need completing.
 
-### Roadmap
-- a 'pure js' defined page - alongside the existing JSON and markdown allowing more custom page builds.
-- Integration of client side scripts and styles into the page definition
-- An idea to have swappable view rendering  - alternatives to Handlebars.js, maybe to experiment with React generated pages.  
 
 
 ### License
 The MIT License (MIT)
-Copyright (c) 2016 Adam Davis
+Copyright (c) 2019 Adam Davis
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
