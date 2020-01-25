@@ -1,6 +1,6 @@
 {
   "name": "blockstatic",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "generate static HTML pages from structured configs markdown and json",
   "main": "index.js",
   "bin": "./bin/index.js",
